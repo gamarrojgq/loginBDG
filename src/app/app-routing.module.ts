@@ -14,6 +14,7 @@ const routes: Routes = [
     path: 'admin', loadChildren: './admin/admin.module#AdminPageModule',
     canActivate: [AuthGuard]  
   },
+  { path: 'todo-details', loadChildren: './pages/todo-details/todo-details.module#TodoDetailsPageModule' },
 ];
 
 @NgModule({

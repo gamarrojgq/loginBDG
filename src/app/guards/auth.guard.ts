@@ -18,13 +18,15 @@ export class AuthGuard implements CanActivate  {
     UrlTree | 
     Observable<boolean | 
       UrlTree> | Promise<boolean | UrlTree> {
-    return true;
-    if(this.authService.isLogged){
-      return true;
-    }
-    console.log('Acceso denegado');
-    this.router.navigateByUrl('/login');
-    return false;
+
+      if(this.authService.isLogged){
+        return true;
+      }
+      else {
+        console.log('Acceso denegado');
+        this.router.navigateByUrl('/login');
+        return false;  
+      }
   }
   
 }

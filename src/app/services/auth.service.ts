@@ -8,7 +8,11 @@ import { User } from '../entity/user.class';
 export class AuthService {
 
   public isLogged: any = false;
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth) { 
+    afAuth.authState.subscribe(user => {
+      this.isLogged = user;
+    })
+  }
 
   //funcion asyncrona, callbacks, promesas, async y await EcamScipt JS, suscriptiores y observadores 
   //periferico externo, lecturo de archivo, api, libreri fuera del proyecto , latencia red ,etc 
