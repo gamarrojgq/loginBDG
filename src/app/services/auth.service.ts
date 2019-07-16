@@ -15,7 +15,7 @@ export class AuthService {
   }
 
   //funcion asyncrona, callbacks, promesas, async y await EcamScipt JS, suscriptiores y observadores 
-  //periferico externo, lecturo de archivo, api, libreri fuera del proyecto , latencia red ,etc 
+  //periferico externo, lectura de archivo, api, libreri fuera del proyecto, latencia red ,etc 
   async onLogin(user: User) {
     //cuando se trabaja con funciones asincronas como un lenguaje como java o c# tenemos que manejar
     //excepciones con try catch 

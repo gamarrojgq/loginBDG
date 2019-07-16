@@ -1,14 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-back-button defaultHref="/home"></ion-back-button>
+    <ion-buttons slot="start">
+        <ion-back-button  defaultHref="/home"></ion-back-button>
+    </ion-buttons>
     <ion-title>admin</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ng-container *ngif="!todos || todos.length == 0">
-      <div **ngFor="let n of [0,1,2]" padding>
+    <ng-container *ngIf="!todos || todos.length == 0">
+      <div *ngFor="let n of [0,1,2]" padding>
         <ion-skeleton-text></ion-skeleton-text>
         <p>
             <ion-skeleton-text class="text-skeleton"></ion-skeleton-text>
@@ -16,10 +18,10 @@
       </div>
     </ng-container>
     
-    <ion-item-sliding **ngFor="let todo of todos">
+    <ion-item-sliding *ngFor="let todo of todos">
       <ion-item lines="inset" button [routerLink]= "['/todo-details', todo.id]">
         <ion-label>{{ todo.task }}</ion-label>
-        <ion-note slot="end" color="primary"> {{ tdodo.priority }} </ion-note>
+        <ion-note slot="end" color="primary"> {{ todo.priority }} </ion-note>
       </ion-item>
 
       <ion-item-options side="end">

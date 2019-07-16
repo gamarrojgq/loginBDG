@@ -15,7 +15,7 @@ export class TodoService {
   }
 
   ////////////////////////////////////////////////
-  getTodos() {
+  getTodos() {//RethinkDB(local) en tiempo real igual que firebase (en la nube)
     //si no existe la colleccion la crea en firebase, cambio el nombre firebase crea otra coleccion
     //lo mejor es usar siempre el mismo nombre  
     this.todosCollection = this.db.collection<TaskI>('todos');

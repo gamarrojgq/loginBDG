@@ -1,9 +1,44 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
     <ion-title>todo-details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngIf="todo">
+      <ion-input
+        required
+        type="text"    
+        placeholder = "Task"
+        [(ngModel)]="todo.task"
+      >
+      </ion-input>      
+    </ion-item>
+    <ion-item *ngIf="todo">
+        <ion-input
+          required
+          type="number"    
+          placeholder = "Priority"
+          [(ngModel)]="todo.priority"
+        >
+        </ion-input>      
+      </ion-item>
+    </ion-list>
+    
+    <ion-button expand="full" (click)="guardarTodo()">Guardar</ion-button>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+      <ion-fab-button
+        color="danger" 
+        (click)="removeTodo()"
+        routerLink="/admin"
+      >
+        <ion-icon name="trash"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

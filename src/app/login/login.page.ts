@@ -27,7 +27,7 @@ export class LoginPage implements OnInit {
       return this.presentToast(resultado.message);
     }
     this.presentToast('Bienvenido');
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/admin');
   }
 
   async presentToast(message: string) {
